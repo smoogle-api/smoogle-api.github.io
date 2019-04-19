@@ -312,6 +312,8 @@ In sandbox mode (i.e. using a test API key) the translation will be a random str
 <h1 id='rate-limits'>Rate Limits</h1>
 <p>Rate limiting of the API is primarily on a per-user basis — or more accurately described, per API key. If a method allows for 30 requests per rate limit window, then it allows 30 requests per window per API key. In addition, rate limits may be applied on a per-route basis or globally.</p>
 
+<p>The returned HTTP headers of any API request show your current rate limit status:</p>
+
 <table><thead>
 <tr>
 <th>Header</th>
@@ -319,15 +321,15 @@ In sandbox mode (i.e. using a test API key) the translation will be a random str
 </tr>
 </thead><tbody>
 <tr>
-<td>X-Rate-Limit-Limit</td>
+<td>X-RateLimit-Limit</td>
 <td>The maximum number of requests you&#39;re permitted to make in the current rate limit window.</td>
 </tr>
 <tr>
-<td>X-Rate-Limit-Remaining</td>
+<td>X-RateLimit-Remaining</td>
 <td>The number of requests remaining in the current rate limit window.</td>
 </tr>
 <tr>
-<td>X-Rate-Limit-Reset</td>
+<td>X-RateLimit-Reset</td>
 <td>The time at which the current rate limit window resets in <a href="http://en.wikipedia.org/wiki/Unix_time">UTC epoch seconds</a>.</td>
 </tr>
 </tbody></table>
