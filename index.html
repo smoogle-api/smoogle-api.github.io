@@ -310,9 +310,7 @@ In sandbox mode (i.e. using a test API key) the translation will be a random str
 
 <p>For everyone else, there is a base price of $5 per month, which includes one million characters per month. After that, you are charged in tiers $5 per one million characters.</p>
 <h1 id='rate-limits'>Rate Limits</h1>
-<p>All rate limits are applied on a per-route basis, with the exception of a global rate limit applied throughout the API.</p>
-
-<p>By &quot;per-route,&quot; we mean that the rate limits exists for each unique path of the API. For example, <code>/translate/en/de</code>, <code>/translate/en/ru</code>, and <code>/translate/auto/ru</code> are three different routes, with their own individual rate limits.</p>
+<p>Rate limiting of the API is primarily on a per-user basis — or more accurately described, per API key. If a method allows for 30 requests per rate limit window, then it allows 30 requests per window per API key. In addition, rate limits may be applied on a per-route basis or globally.</p>
 
 <table><thead>
 <tr>
