@@ -1,0 +1,385 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight .gh {
+  color: #999999;
+}
+.highlight .sr {
+  color: #f6aa11;
+}
+.highlight .go {
+  color: #888888;
+}
+.highlight .gp {
+  color: #555555;
+}
+.highlight .gs {
+}
+.highlight .gu {
+  color: #aaaaaa;
+}
+.highlight .nb {
+  color: #f6aa11;
+}
+.highlight .cm {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #75715e;
+}
+.highlight .c1 {
+  color: #75715e;
+}
+.highlight .cs {
+  color: #75715e;
+}
+.highlight .c, .highlight .cd {
+  color: #75715e;
+}
+.highlight .err {
+  color: #960050;
+}
+.highlight .gr {
+  color: #960050;
+}
+.highlight .gt {
+  color: #960050;
+}
+.highlight .gd {
+  color: #49483e;
+}
+.highlight .gi {
+  color: #49483e;
+}
+.highlight .ge {
+  color: #49483e;
+}
+.highlight .kc {
+  color: #66d9ef;
+}
+.highlight .kd {
+  color: #66d9ef;
+}
+.highlight .kr {
+  color: #66d9ef;
+}
+.highlight .no {
+  color: #66d9ef;
+}
+.highlight .kt {
+  color: #66d9ef;
+}
+.highlight .mf {
+  color: #ae81ff;
+}
+.highlight .mh {
+  color: #ae81ff;
+}
+.highlight .il {
+  color: #ae81ff;
+}
+.highlight .mi {
+  color: #ae81ff;
+}
+.highlight .mo {
+  color: #ae81ff;
+}
+.highlight .m, .highlight .mb, .highlight .mx {
+  color: #ae81ff;
+}
+.highlight .sc {
+  color: #ae81ff;
+}
+.highlight .se {
+  color: #ae81ff;
+}
+.highlight .ss {
+  color: #ae81ff;
+}
+.highlight .sd {
+  color: #e6db74;
+}
+.highlight .s2 {
+  color: #e6db74;
+}
+.highlight .sb {
+  color: #e6db74;
+}
+.highlight .sh {
+  color: #e6db74;
+}
+.highlight .si {
+  color: #e6db74;
+}
+.highlight .sx {
+  color: #e6db74;
+}
+.highlight .s1 {
+  color: #e6db74;
+}
+.highlight .s {
+  color: #e6db74;
+}
+.highlight .na {
+  color: #a6e22e;
+}
+.highlight .nc {
+  color: #a6e22e;
+}
+.highlight .nd {
+  color: #a6e22e;
+}
+.highlight .ne {
+  color: #a6e22e;
+}
+.highlight .nf {
+  color: #a6e22e;
+}
+.highlight .vc {
+  color: #ffffff;
+}
+.highlight .nn {
+  color: #ffffff;
+}
+.highlight .nl {
+  color: #ffffff;
+}
+.highlight .ni {
+  color: #ffffff;
+}
+.highlight .bp {
+  color: #ffffff;
+}
+.highlight .vg {
+  color: #ffffff;
+}
+.highlight .vi {
+  color: #ffffff;
+}
+.highlight .nv {
+  color: #ffffff;
+}
+.highlight .w {
+  color: #ffffff;
+}
+.highlight {
+  color: #ffffff;
+}
+.highlight .n, .highlight .py, .highlight .nx {
+  color: #ffffff;
+}
+.highlight .ow {
+  color: #f92672;
+}
+.highlight .nt {
+  color: #f92672;
+}
+.highlight .k, .highlight .kv {
+  color: #f92672;
+}
+.highlight .kn {
+  color: #f92672;
+}
+.highlight .kp {
+  color: #f92672;
+}
+.highlight .o {
+  color: #f92672;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;json&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo.png" class="logo" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="json">json</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+          <li>
+            <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+          </li>
+          <li>
+            <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+          </li>
+          <li>
+            <a href="#translate-api" class="toc-h1 toc-link" data-title="Translate API">Translate API</a>
+          </li>
+          <li>
+            <a href="#pricing" class="toc-h1 toc-link" data-title="Pricing">Pricing</a>
+          </li>
+          <li>
+            <a href="#rate-limits" class="toc-h1 toc-link" data-title="Rate Limits">Rate Limits</a>
+          </li>
+          <li>
+            <a href="#errors" class="toc-h1 toc-link" data-title="Errors">Errors</a>
+          </li>
+      </ul>
+        <ul class="toc-footer">
+            <li><a href='https://smoogle.gg/developers'>Register a new API key</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id='introduction'>Introduction</h1>
+<p>Welcome to the Smoogle API! You can use our API to translate text within any application. The API is organized around REST and returns JSON-encoded responses.</p>
+
+<p>If you have any questions, please send an email to <a href="mailto:developers@smoogle.gg">developers@smoogle.gg</a>.</p>
+<h1 id='authentication'>Authentication</h1>
+<p>Authentication is performed with the <code>Authorization</code> HTTP header in the format</p>
+
+<p><code>Authorization: your-api-key</code></p>
+
+<p>Since the API is in closed beta, if you wish to use the API, please send an email to <a href="mailto:developers@smoogle.gg">developers@smoogle.gg</a> with the following information</p>
+
+<ul>
+<li>A brief description of how you plan to use the API</li>
+<li>An estimate of what your average throughput will be (e.g. 200,000 characters per hour).</li>
+</ul>
+
+<p>If selected, you&#39;ll receive two API keys, one to be used for production, and the other for testing in a &quot;sandbox&quot; version of the API.</p>
+<h1 id='translate-api'>Translate API</h1>
+<blockquote>
+<p>Example request</p>
+</blockquote>
+<pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
+  https://api.smoogle.gg/v1/translate/auto/de <span class="se">\</span>
+  -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
+  -d <span class="s1">'{"text":"Where is the cheese?"}'</span>
+</code></pre>
+<blockquote>
+<p>Example response</p>
+</blockquote>
+<pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+    </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wo ist die Käse?"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint will translate text.</p>
+
+<p><code>POST https://api.smoogle.gg/v1/translate/:src/:dest</code></p>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>dest</td>
+<td>Yes</td>
+<td>The destination language.</td>
+</tr>
+<tr>
+<td>src</td>
+<td>Yes</td>
+<td>The source language. Use &quot;auto&quot; to auto-detect the language.</td>
+</tr>
+</tbody></table>
+
+<aside class="notice">
+In sandbox mode (i.e. using a test API key) the translation will be a random string.
+</aside>
+<h1 id='pricing'>Pricing</h1>
+<p>For beta users, the API is free until it is fully released. After that, beta users can use the API for free for up to 5,000,000 characters per month. Other rewards may be given as well, depending on the needs of their application and other factors.</p>
+
+<p>For everyone else, there is a base price of $5 per month, which includes one million characters per month. After that, you are charged in tiers $5 per one million characters.</p>
+<h1 id='rate-limits'>Rate Limits</h1>
+<p>All rate limits are applied on a per-route basis, with the exception of a global rate limit applied throughout the API.</p>
+
+<p>By &quot;per-route,&quot; we mean that the rate limits exists for each unique path of the API. For example, <code>/translate/en/de</code>, <code>/translate/en/ru</code>, and <code>/translate/auto/ru</code> are three different routes, with their own individual rate limits.</p>
+
+<table><thead>
+<tr>
+<th>Header</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>X-Rate-Limit-Limit</td>
+<td>The maximum number of requests you&#39;re permitted to make in the current rate limit window.</td>
+</tr>
+<tr>
+<td>X-Rate-Limit-Remaining</td>
+<td>The number of requests remaining in the current rate limit window.</td>
+</tr>
+<tr>
+<td>X-Rate-Limit-Reset</td>
+<td>The time at which the current rate limit window resets in <a href="http://en.wikipedia.org/wiki/Unix_time">UTC epoch seconds</a>.</td>
+</tr>
+</tbody></table>
+
+<p>Because we may change rate limits at any time and rate limits can be different per application, <em>rate limits should not be hard coded into your bot/application</em>. In order to properly support our dynamic rate limits, your application should parse for our rate limits in response headers and locally prevent exceeding of the limits as they change.</p>
+<h1 id='errors'>Errors</h1>
+<p>The Smoogle API uses the following error codes:</p>
+
+<table><thead>
+<tr>
+<th>Error Code</th>
+<th>Meaning</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>200</td>
+<td>OK -- Everything is working as expected.</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Bad Request -- Your request is invalid.</td>
+</tr>
+<tr>
+<td>401</td>
+<td>Unauthorized -- Your API key is wrong.</td>
+</tr>
+<tr>
+<td>402</td>
+<td>Request Failed -- The parameters were valid but the request failed.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>Not Found -- The requested resource doesn&#39;t exist.</td>
+</tr>
+<tr>
+<td>429</td>
+<td>Too Many Requests -- Too many requests hit the API too quickly and the rate limit was exceeded. Slow down and try again later.</td>
+</tr>
+<tr>
+<td>500, 502, 503, 504</td>
+<td>Server Errors -- We had a problem with our server. Try again later.</td>
+</tr>
+</tbody></table>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="json">json</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
