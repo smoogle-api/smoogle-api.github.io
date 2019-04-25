@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>API Reference</title>
+    <title>Smoogle API Reference</title>
 
     <style>
       .highlight table td { padding: 5px; }
@@ -251,22 +251,16 @@
 <h1 id='authentication'>Authentication</h1>
 <p>Authentication is performed with the <code>Authorization</code> HTTP header in the format</p>
 
-<p><code>Authorization: your-api-key</code></p>
+<p><code>Authorization: Bearer your-api-key</code></p>
 
-<p>Since the API is in closed beta, if you wish to use the API, please send an email to <a href="mailto:developers@smoogle.gg">developers@smoogle.gg</a> with the following information</p>
-
-<ul>
-<li>A brief description of how you plan to use the API</li>
-<li>An estimate of what your average throughput will be (e.g. 200,000 characters per hour).</li>
-</ul>
-
-<p>If selected, you&#39;ll receive two API keys, one to be used for production, and the other for testing in a &quot;sandbox&quot; version of the API.</p>
+<p>You can manage your keys in the <a href="https://smoogle.gg/premium/dashboard">API dashboard</a>.</p>
 <h1 id='translate-api'>Translate API</h1>
 <blockquote>
 <p>Example request</p>
 </blockquote>
 <pre class="highlight shell tab-shell"><code>curl -X POST <span class="se">\</span>
   https://api.smoogle.gg/v1/translate/auto/de <span class="se">\</span>
+  -H <span class="s1">'Authorization: Bearer your-api-key'</span> <span class="se">\</span>
   -H <span class="s1">'Content-Type: application/json'</span> <span class="se">\</span>
   -d <span class="s1">'{"text":"Where is the cheese?"}'</span>
 </code></pre>
@@ -276,7 +270,15 @@
 <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
     </span><span class="s2">"text"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Wo ist die Käse?"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"src"</span><span class="p">:</span><span class="w"> </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de"</span><span class="w">
+    </span><span class="s2">"dest"</span><span class="p">:</span><span class="w"> </span><span class="s2">"de"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"settings"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"languages"</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+            </span><span class="s2">"en"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"de"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"ru"</span><span class="p">,</span><span class="w">
+            </span><span class="s2">"fr"</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+    </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 <p>This endpoint will translate text.</p>
@@ -302,13 +304,37 @@
 </tr>
 </tbody></table>
 
+<p>Response fields</p>
+
+<table><thead>
+<tr>
+<th>Field</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>text</td>
+<td>The translated text. Will return &quot;&quot;</td>
+</tr>
+<tr>
+<td>dest</td>
+<td>The destination language.</td>
+</tr>
+<tr>
+<td>src</td>
+<td>The source language.</td>
+</tr>
+<tr>
+<td>settings</td>
+<td>Settings describing your account or the API. <code>languages</code> is an array of available languages.</td>
+</tr>
+</tbody></table>
+
 <aside class="notice">
-In sandbox mode (i.e. using a test API key) the translation will be a random string.
+In sandbox mode (i.e. using a test API key) the translation will be "Hello from Smoogle API" with both `dest` and `src` returning `en` in the response.
 </aside>
 <h1 id='pricing'>Pricing</h1>
-<p>For beta users, the API is free until it is fully released. After that, beta users can use the API for free for up to 5,000,000 characters per month. Other rewards may be given as well, depending on the needs of their application and other factors.</p>
-
-<p>For everyone else, there is a base price of $5 per month, which includes one million characters per month. After that, you are charged in tiers $5 per one million characters.</p>
+<p>$20 per month to use the API for an unlimited number of characters.</p>
 <h1 id='rate-limits'>Rate Limits</h1>
 <p>Rate limiting of the API is primarily on a per-user basis — or more accurately described, per API key. If a method allows for 30 requests per rate limit window, then it allows 30 requests per window per API key. In addition, rate limits may be applied on a per-route basis or globally.</p>
 
